@@ -1,4 +1,4 @@
-package com.iris.designpatterns.prototype;
+package com.iris.designpatterns.creational.prototype;
 
 public class PrototypeExample {
     public static void main(String[] args) {

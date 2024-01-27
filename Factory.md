@@ -26,3 +26,9 @@ Dependency injection frameworks use the factory pattern to create instances of o
 
 ## Operating System Processes:
 Operating systems use factories to create processes. Different types of processes (foreground, background, system) may have their own process factories, and the operating system can create the appropriate process based on user or system requirements.
+
+**Centralized object creation**: Encapsulates object creation logic within a dedicated factory class, ensuring consistency and control.
+
+**Decoupling client code:** Clients interact with the factory instead of specific concrete classes, improving flexibility and adaptability to changes.
+
+**Open/Closed principle:** New product types (shapes, database connections) can be easily added without modifying existing clients.

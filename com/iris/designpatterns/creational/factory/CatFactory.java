@@ -1,4 +1,4 @@
-package com.iris.designpatterns.factory;
+package com.iris.designpatterns.creational.factory;
 
 public class CatFactory implements AnimalFactory {
 

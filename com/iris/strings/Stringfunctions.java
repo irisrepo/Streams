@@ -9,11 +9,11 @@ public class Stringfunctions {
         String name = "John";
         char firstLetter = name.charAt(0); // firstLetter will be 'J'
         char secondLetter = name.charAt(1);// second letter will be 'o'
-        System.out.println(firstLetter + " " + secondLetter);
+     //   System.out.println(firstLetter + " " + secondLetter);
         //trim()
         String message = " Hell o World ";
         String trimmedMessage = message.trim(); // trimmedMessage will be "Hello World"
-        System.out.println(trimmedMessage);
+       // System.out.println(trimmedMessage);
 
         //search operations
         String sentence = "The quick brown fox jumps over the lazy dog.";
@@ -46,13 +46,13 @@ public class Stringfunctions {
         String phoneNumber = "(555) 123-4567";
         String formattedNumber = phoneNumber.replace("-", ""); // formattedNumber will be "(555)1234567"
         FunctionHelper fh= new FunctionHelper();
-        fh.countoccurrence("Photosynthesised");
-
+      //  fh.countoccurrence("Photosynthesised");
 
         Map<Character, Integer> charCountMap = fh.countwordoccurrence("Willkommen");
         for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-            System.out.println("'" + entry.getKey() + "' occurs " + entry.getValue() + " times");
+       //     System.out.println("'" + entry.getKey() + "' occurs " + entry.getValue() + " times");
         }
+        fh.getFirstNonRepeated("Suresh");
 
     }
 
