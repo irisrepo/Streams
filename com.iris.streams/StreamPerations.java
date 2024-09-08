@@ -3,7 +3,6 @@ package com.iris.streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class StreamPerations {
@@ -44,7 +43,8 @@ public class StreamPerations {
         employeeList.stream().filter(e -> e.yearOfJoining > 2015).map(Employee::getName).forEach(System.out::println);
 
         //Count the number of employees in each department
-        Map<String, Long> noofemployesseachdepartment =employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting() ));
+        Map<String, Long> noofemployesseachdepartment =employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting()));
+
         System.out.println(noofemployesseachdepartment);
     }
 

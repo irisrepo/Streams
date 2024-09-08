@@ -1,8 +1,8 @@
 package com.iris.strings;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-
 
 
 public class FunctionHelper {
@@ -36,15 +36,21 @@ public class FunctionHelper {
     //First non repeated character 
 
     public char getFirstNonRepeated(String text) {
-        char nonrepeatedchar = 0;
-        char[] charray= text.toCharArray();
-        Map<String,Character> countermap = new HashMap<String,Character>();
-        for(char ch:charray){
-          if( (Character.isLetter(ch))){
-              nonrepeatedchar=ch;
-              break;
-          }
+
+        char[] charray = text.toCharArray();
+        //Step1: Keep elements in hashamp
+        Map<Character, Integer> countermap = new LinkedHashMap<>();
+        for (char ch : charray) {
+            countermap.put(ch, countermap.getOrDefault(ch, 0) + 1);
         }
-        return nonrepeatedchar;
+        //Step 2: c
+        for (char c : charray) {
+            if (countermap.get(c) == 1) {
+                return c;
+            }
+        }
+        return '\1';
     }
+
+
 }

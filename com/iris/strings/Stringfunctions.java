@@ -2,6 +2,7 @@ package com.iris.strings;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Stringfunctions {
     public static void main(String[] args) {
@@ -9,11 +10,11 @@ public class Stringfunctions {
         String name = "John";
         char firstLetter = name.charAt(0); // firstLetter will be 'J'
         char secondLetter = name.charAt(1);// second letter will be 'o'
-     //   System.out.println(firstLetter + " " + secondLetter);
+        //   System.out.println(firstLetter + " " + secondLetter);
         //trim()
         String message = " Hell o World ";
         String trimmedMessage = message.trim(); // trimmedMessage will be "Hello World"
-       // System.out.println(trimmedMessage);
+        // System.out.println(trimmedMessage);
 
         //search operations
         String sentence = "The quick brown fox jumps over the lazy dog.";
@@ -45,18 +46,36 @@ public class Stringfunctions {
         //Replacing specific characters:
         String phoneNumber = "(555) 123-4567";
         String formattedNumber = phoneNumber.replace("-", ""); // formattedNumber will be "(555)1234567"
-        FunctionHelper fh= new FunctionHelper();
-      //  fh.countoccurrence("Photosynthesised");
+        FunctionHelper fh = new FunctionHelper();
+        //  fh.countoccurrence("Photosynthesised");
 
         Map<Character, Integer> charCountMap = fh.countwordoccurrence("Willkommen");
         for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-       //     System.out.println("'" + entry.getKey() + "' occurs " + entry.getValue() + " times");
+            //     System.out.println("'" + entry.getKey() + "' occurs " + entry.getValue() + " times");
         }
-        fh.getFirstNonRepeated("Suresh");
+        char result = fh.getFirstNonRepeated("suresh");
+        if (result != '\0') {
+            System.out.println("First nonrepeated charatce " + result);
+        } else {
+            System.out.println("All are repeated " + result);
+        }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the string: ");
+        String str = scanner.nextLine();
+
+        System.out.print("Enter the substring to count: ");
+        String sub = scanner.nextLine();
+
+        long count = str.chars()
+                .filter(c -> c == sub.charAt(0))
+                .mapToObj(c -> str.substring(str.indexOf(c)))
+                .filter(s -> s.startsWith(sub))
+                .count();
+
+        System.out.println("The substring '" + sub + "' occurs " + count + " times in '" + str + "'");
 
     }
-
-
 
 
 }
